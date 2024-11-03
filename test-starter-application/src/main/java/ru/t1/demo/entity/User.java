@@ -2,8 +2,11 @@ package ru.t1.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -38,16 +41,22 @@ public class User {
     @Enumerated(EnumType.ORDINAL)
     private UserGender gender;
 
+    @CreationTimestamp
+    private ZonedDateTime createdAt;
+
+    @UpdateTimestamp
+    private ZonedDateTime updatedAt;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(fullAddress, user.fullAddress) && Objects.equals(age, user.age) && gender == user.gender;
+        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(fullAddress, user.fullAddress) && Objects.equals(age, user.age) && gender == user.gender && Objects.equals(createdAt, user.createdAt) && Objects.equals(updatedAt, user.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, fullAddress, age, gender);
+        return Objects.hash(id, firstName, lastName, fullAddress, age, gender, createdAt, updatedAt);
     }
 }

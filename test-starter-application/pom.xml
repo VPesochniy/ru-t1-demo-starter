@@ -41,6 +41,11 @@
             <artifactId>datafaker</artifactId>
             <version>2.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>ru.t1.demo</groupId>
+            <artifactId>starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
