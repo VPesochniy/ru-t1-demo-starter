@@ -15,19 +15,23 @@ public class UserService {
     private final UserRepository userRepository;
 
     public List<User> getAllUsers() {
+
         return userRepository.findAll();
     }
 
     public User getUserById(UUID userId) {
+
         return userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("No such user with " + userId + " id."));
     }
 
     public void deleteUserById(UUID userId) {
+
         User foundUser = getUserById(userId);
         userRepository.delete(foundUser);
     }
 
     public User addUser(User user) {
+
         return userRepository.save(user);
     }
 }

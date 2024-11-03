@@ -19,6 +19,7 @@ public class UserController {
 
     @GetMapping
     public List<UserDto> getAllUsers() {
+
         return userService.getAllUsers().stream()
                 .map(UserMapper::toDto)
                 .toList();
@@ -26,7 +27,9 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserDto getUserById(@PathVariable UUID id) {
+
         User foundUser = userService.getUserById(id);
+
         return UserMapper.toDto(foundUser);
     }
 
@@ -42,6 +45,7 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public void deleteUserById(@PathVariable UUID id) {
+
         userService.deleteUserById(id);
     }
 }

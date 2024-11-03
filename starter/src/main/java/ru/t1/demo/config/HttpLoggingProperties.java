@@ -7,47 +7,16 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "http.logging")
 public class HttpLoggingProperties {
 
-//    private enum LogLevel {OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL}
-    private enum LogLevel {ERROR, WARN, INFO}
 
     private Boolean isEnabled = true;
     private LogLevel logLevel = LogLevel.INFO;
-    private Boolean isGetMappingEnabled = true;
-    private Boolean isPostMappingEnabled = true;
-    private Boolean isDeleteMappingEnabled = true;
-    private Boolean isPutMappingEnabled = true;
 
-    public Boolean isGetMappingEnabled() {
-        return isGetMappingEnabled;
-    }
+//    тут можно еще кучу всякого добавить, например каждый метод отдельно
 
-    public Boolean isPostMappingEnabled() {
-        return isPostMappingEnabled;
-    }
-
-    public Boolean isDeleteMappingEnabled() {
-        return isDeleteMappingEnabled;
-    }
-
-    public Boolean isPutMappingEnabled() {
-        return isPutMappingEnabled;
-    }
-
-    public void setGetMappingEnabled(Boolean isGetMappingEnabled) {
-        this.isGetMappingEnabled = isGetMappingEnabled;
-    }
-
-    public void setPostMappingEnabled(Boolean isPostMappingEnabled) {
-        this.isPostMappingEnabled = isPostMappingEnabled;
-    }
-
-    public void setDeleteMappingEnabled(Boolean isDeleteMappingEnabled) {
-        this.isDeleteMappingEnabled = isDeleteMappingEnabled;
-    }
-
-    public void setPutMappingEnabled(Boolean isPutMappingEnabled) {
-        this.isPutMappingEnabled = isPutMappingEnabled;
-    }
+//    private Boolean isGetMappingEnabled = true;
+//    private Boolean isPostMappingEnabled = true;
+//    private Boolean isDeleteMappingEnabled = true;
+//    private Boolean isPutMappingEnabled = true;
 
     public Boolean isEnabled() {
         return isEnabled;
