@@ -12,7 +12,6 @@ public class HttpLoggingProperties {
     private LogLevel logLevel = LogLevel.INFO;
 
 //    тут можно еще кучу всякого добавить, например каждый метод отдельно
-
 //    private Boolean isGetMappingEnabled = true;
 //    private Boolean isPostMappingEnabled = true;
 //    private Boolean isDeleteMappingEnabled = true;

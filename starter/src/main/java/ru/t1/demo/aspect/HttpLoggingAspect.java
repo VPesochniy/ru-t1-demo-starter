@@ -26,21 +26,8 @@ public class HttpLoggingAspect {
     }
 
 //    также можно добваить отдельные срезы для упрощения
-//
 //    @Pointcut("@annotation(org.springframework.web.bind.annotation.GetMapping)")
 //    public void getMapping() {
-//    }
-//
-//    @Pointcut("@annotation(org.springframework.web.bind.annotation.PostMapping)")
-//    public void postMapping() {
-//    }
-//
-//    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
-//    public void deleteMapping() {
-//    }
-//
-//    @Pointcut("@annotation(org.springframework.web.bind.annotation.PutMapping)")
-//    public void putMapping() {
 //    }
 
 
