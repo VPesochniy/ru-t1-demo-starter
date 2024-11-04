@@ -10,12 +10,12 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
-@Builder
+@ToString
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
-@Getter
-@ToString
+@Builder
 @Table(name = "usr")
 @Entity
 public class User {
@@ -23,28 +23,32 @@ public class User {
     @Id
     @UuidGenerator
     @Setter(AccessLevel.NONE)
+    @Column(updatable = false, unique = true, nullable = false, name = "id")
     private UUID id;
 
-    @Column
+    @Column(nullable = false, name = "first_name")
     private String firstName;
 
-    @Column
+    @Column(nullable = false, name = "last_name")
     private String lastName;
 
-    @Column
+    @Column(nullable = false, name = "full_address")
     private String fullAddress;
 
-    @Column
+    @Column(nullable = false, name = "age")
     private Integer age;
 
-    @Column
-    @Enumerated(EnumType.ORDINAL)
+    @Column(nullable = false, name = "gender")
+    @Enumerated(EnumType.STRING)
     private UserGender gender;
 
     @CreationTimestamp
+    @Setter(AccessLevel.NONE)
+    @Column(updatable = false, nullable = false, name = "created_at")
     private ZonedDateTime createdAt;
 
     @UpdateTimestamp
+    @Column(nullable = false,name = "updated_at")
     private ZonedDateTime updatedAt;
 
     @Override

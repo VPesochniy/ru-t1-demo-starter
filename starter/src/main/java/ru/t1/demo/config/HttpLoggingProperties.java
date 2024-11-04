@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "http.logging")
 public class HttpLoggingProperties {
 
-
     private Boolean isEnabled = true;
     private LogLevel logLevel = LogLevel.INFO;
 

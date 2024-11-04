@@ -7,24 +7,14 @@ import ru.t1.demo.entity.User;
 @Component
 public class UserMapper {
 
-    public static User toEntity(UserDto userDto) {
-        return User.builder()
-                .firstName(userDto.firstName())
-                .lastName(userDto.lastName())
-                .fullAddress(userDto.fullAddress())
-                .age(userDto.age())
-                .gender(userDto.gender())
-                .build();
-    }
-
-    public static UserDto toDto(User user) {
+    public static UserDto toDto(User entity) {
         return UserDto.builder()
-                .id(user.getId())
-                .firstName(user.getFirstName())
-                .lastName(user.getLastName())
-                .fullAddress(user.getFullAddress())
-                .age(user.getAge())
-                .gender(user.getGender())
+                .id(entity.getId())
+                .firstName(entity.getFirstName())
+                .lastName(entity.getLastName())
+                .fullAddress(entity.getFullAddress())
+                .age(entity.getAge())
+                .gender(entity.getGender())
                 .build();
     }
 
