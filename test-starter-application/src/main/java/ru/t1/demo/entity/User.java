@@ -49,14 +49,15 @@ public class User {
 
     @Override
     public boolean equals(Object o) {
+        
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(fullAddress, user.fullAddress) && Objects.equals(age, user.age) && gender == user.gender && Objects.equals(createdAt, user.createdAt) && Objects.equals(updatedAt, user.updatedAt);
+        return Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && Objects.equals(fullAddress, user.fullAddress) && Objects.equals(age, user.age) && gender == user.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, fullAddress, age, gender, createdAt, updatedAt);
+        return Objects.hash(firstName, lastName, fullAddress, age, gender);
     }
 }
